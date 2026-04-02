@@ -1,0 +1,113 @@
+{
+  "bindings": {
+    "primary_readme_path": "README.md",
+    "publish_config_path": "PIH/Properties/PublishConfiguration.xml",
+    "settings_source_path": "PIH/Setting.cs"
+  },
+  "extra": {
+    "weekly_update": {
+      "priority_markers": {
+        "regex": "\\[(?:P[0-3]|medium|high|low)\\]"
+      },
+      "release_issue": {
+        "title_regex": "^\\[Release\\]\\s*(?P<tag>v[0-9A-Za-z._-]+)$"
+      },
+      "review_markers": {
+        "acknowledged": [
+          "phase=ack"
+        ],
+        "resolved": [
+          "phase=complete"
+        ]
+      },
+      "state": {
+        "marker_path": ".codex/state/weekly-update-last-success.json",
+        "namespace": "weekly-update"
+      }
+    }
+  },
+  "lint_rules": {
+    "missing_review_docs_are_errors": false,
+    "require_readme_settings_table": false
+  },
+  "name": "weekly-update",
+  "notes": [
+    "This file is a project-local skill profile for one consumer repository.",
+    "It is not a reusable foundry overlay and should stay outside the vendor subtree.",
+    "Keep this profile data-only: add repo-specific bindings, review docs, booleans, and notes here.",
+    "Review retained defaults before trusting this profile; unchanged values may still be reusable placeholders.",
+    "Keep repo-specific weekly-update conventions in project-local profile data when vendored.",
+    "Do not encode validator or apply behavior in this profile."
+  ],
+  "packet_defaults": {
+    "review_docs": {
+      "changes_packet": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        "docs/architecture/patch-plan.md"
+      ],
+      "incidents_packet": [
+        "README.md",
+        "CONTRIBUTING.md",
+        ".github/evidence-schema.md",
+        ".github/investigation-workflow.md"
+      ],
+      "mapping_packet": [
+        "README.md",
+        "CONTRIBUTING.md",
+        ".github/pull_request_template.md",
+        "docs/architecture/runtime-layout.md"
+      ],
+      "risks_packet": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        "docs/architecture/patch-plan.md"
+      ]
+    },
+    "source_path_globs": {
+      "changes_packet": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        "docs/**/*.md",
+        ".github/**/*.md"
+      ],
+      "incidents_packet": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        ".github/**/*.md",
+        "docs/**/*.md"
+      ],
+      "mapping_packet": [
+        "docs/**/*.md",
+        ".github/**/*.md",
+        "PIH/**/*.cs"
+      ],
+      "risks_packet": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        "docs/**/*.md",
+        ".github/**/*.md"
+      ]
+    }
+  },
+  "profile_path": ".codex/project/profiles/weekly-update/profile.json",
+  "repo_match": {
+    "remote_patterns": [],
+    "root_markers": [
+      ".git",
+      "README.md"
+    ]
+  },
+  "summary": "Project-local weekly-update profile scaffold for this consumer repository. Replace retained defaults with repo-specific bindings, review docs, and local notes.",
+  "metadata": {
+    "versioning": {
+      "builder_family": "packet-workflow",
+      "builder_semver": "0.1.0",
+      "compatibility_epoch": 1,
+      "repo_profile_schema_version": 1
+    }
+  },
+  "kind": "project-local-profile"
+}

@@ -1,0 +1,124 @@
+{
+  "bindings": {
+    "primary_readme_path": "README.md",
+    "publish_config_path": "PIH/Properties/PublishConfiguration.xml",
+    "settings_source_path": "PIH/Setting.cs"
+  },
+  "extra": {
+    "public_docs_sync": {
+      "audited_public_doc_inventory": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        ".github/pull_request_template.md",
+        ".github/evidence-schema.md",
+        ".github/investigation-workflow.md",
+        ".github/workflows/release.yml",
+        "docs/architecture/runtime-layout.md",
+        "docs/architecture/patch-plan.md",
+        "docs/balancing/constants-sheet.md"
+      ],
+      "issue_template_groups": {
+        "reporting": [
+          "evidence.yml"
+        ],
+        "workflow": [
+          "bug_report.yml",
+          "feature_request.yml",
+          "investigation.yml",
+          "release_checklist.yml"
+        ]
+      },
+      "public_workflow_doc_paths": [
+        ".github/pull_request_template.md",
+        ".github/evidence-schema.md",
+        ".github/investigation-workflow.md",
+        ".github/workflows/release.yml"
+      ],
+      "state": {
+        "marker_path": ".codex/state/public-docs-sync-last-success.json",
+        "namespace": "public-docs-sync"
+      }
+    }
+  },
+  "lint_rules": {
+    "missing_review_docs_are_errors": false,
+    "require_readme_settings_table": true
+  },
+  "name": "public-docs-sync",
+  "notes": [
+    "This file is a project-local skill profile for one consumer repository.",
+    "It is not a reusable foundry overlay and should stay outside the vendor subtree.",
+    "Keep this profile data-only: add repo-specific bindings, review docs, booleans, and notes here.",
+    "Review retained defaults before trusting this profile; unchanged values may still be reusable placeholders.",
+    "Keep narrative completion thresholds, evidence-strength wording, and governance-linked completion policy in the consumer-local wrapper.",
+    "Do not encode validator or apply behavior in this profile.",
+    "The retained default scaffold keeps repo-specific bindings null; add them in a project-local override when the workflow needs runtime-source coupling."
+  ],
+  "packet_defaults": {
+    "review_docs": {
+      "claims_packet": [
+        "README.md"
+      ],
+      "forms_batch_packet": [
+        ".github/ISSUE_TEMPLATE/release_checklist.yml",
+        ".github/ISSUE_TEMPLATE/bug_report.yml",
+        ".github/ISSUE_TEMPLATE/evidence.yml",
+        ".github/ISSUE_TEMPLATE/feature_request.yml",
+        ".github/ISSUE_TEMPLATE/investigation.yml"
+      ],
+      "reporting_packet": [
+        ".github/evidence-schema.md",
+        ".github/investigation-workflow.md",
+        "docs/architecture/patch-plan.md",
+        "docs/balancing/constants-sheet.md"
+      ],
+      "workflow_packet": [
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        ".github/pull_request_template.md",
+        ".github/workflows/release.yml"
+      ]
+    },
+    "source_path_globs": {
+      "claims_packet": [
+        "README.md",
+        "**/PublishConfiguration.xml",
+        "**/Setting.cs"
+      ],
+      "forms_batch_packet": [
+        ".github/ISSUE_TEMPLATE/*.yml"
+      ],
+      "reporting_packet": [
+        ".github/evidence-schema.md",
+        ".github/investigation-workflow.md",
+        "docs/architecture/*.md",
+        "docs/balancing/*.md"
+      ],
+      "workflow_packet": [
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        ".github/pull_request_template.md",
+        ".github/workflows/*.yml"
+      ]
+    }
+  },
+  "profile_path": ".codex/project/profiles/public-docs-sync/profile.json",
+  "repo_match": {
+    "remote_patterns": [],
+    "root_markers": [
+      ".git",
+      "README.md"
+    ]
+  },
+  "summary": "Project-local public-docs-sync profile scaffold for this consumer repository. Replace retained defaults with repo-specific bindings, review docs, and local notes.",
+  "metadata": {
+    "versioning": {
+      "builder_family": "packet-workflow",
+      "builder_semver": "0.1.0",
+      "compatibility_epoch": 1,
+      "repo_profile_schema_version": 1
+    }
+  },
+  "kind": "project-local-profile"
+}

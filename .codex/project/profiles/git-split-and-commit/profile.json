@@ -1,0 +1,86 @@
+{
+  "bindings": {
+    "primary_readme_path": "README.md",
+    "publish_config_path": "PIH/Properties/PublishConfiguration.xml",
+    "settings_source_path": "PIH/Setting.cs"
+  },
+  "lint_rules": {
+    "missing_review_docs_are_errors": false,
+    "require_readme_settings_table": false
+  },
+  "name": "git-split-and-commit",
+  "notes": [
+    "This file is a project-local skill profile for one consumer repository.",
+    "It is not a reusable foundry overlay and should stay outside the vendor subtree.",
+    "Keep this profile data-only: add repo-specific bindings, review docs, booleans, and notes here.",
+    "Review retained defaults before trusting this profile; unchanged values may still be reusable placeholders.",
+    "Keep repo-specific commit guidance and file ownership hints in project-local profile data.",
+    "Do not place split safety policy, hunk matching rules, or apply rollback behavior in the profile."
+  ],
+  "packet_defaults": {
+    "review_docs": {
+      "candidate-batch": [
+        "README.md",
+        "CONTRIBUTING.md",
+        ".github/instructions/commit-message.instructions.md"
+      ],
+      "rules": [
+        ".github/instructions/commit-message.instructions.md",
+        "CONTRIBUTING.md",
+        "README.md"
+      ],
+      "split-file": [
+        "README.md",
+        "CONTRIBUTING.md",
+        ".github/instructions/commit-message.instructions.md"
+      ],
+      "worktree": [
+        "README.md",
+        "MAINTAINING.md"
+      ]
+    },
+    "source_path_globs": {
+      "candidate-batch": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        "docs/**/*.md",
+        ".github/**/*.md"
+      ],
+      "rules": [
+        ".github/instructions/*.md",
+        "CONTRIBUTING.md",
+        "README.md"
+      ],
+      "split-file": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        "docs/**/*.md",
+        ".github/**/*.md"
+      ],
+      "worktree": [
+        "PIH/**/*.cs",
+        "PIH.Tests/**/*.cs",
+        "docs/**/*.md",
+        ".github/**/*.md"
+      ]
+    }
+  },
+  "profile_path": ".codex/project/profiles/git-split-and-commit/profile.json",
+  "repo_match": {
+    "remote_patterns": [],
+    "root_markers": [
+      ".git",
+      "README.md"
+    ]
+  },
+  "summary": "Project-local git-split-and-commit profile scaffold for this consumer repository. Replace retained defaults with repo-specific bindings, review docs, and local notes.",
+  "metadata": {
+    "versioning": {
+      "builder_family": "packet-workflow",
+      "builder_semver": "0.1.0",
+      "compatibility_epoch": 1,
+      "repo_profile_schema_version": 1
+    }
+  },
+  "kind": "project-local-profile"
+}

@@ -1,0 +1,86 @@
+{
+  "bindings": {
+    "primary_readme_path": "README.md",
+    "publish_config_path": "PIH/Properties/PublishConfiguration.xml",
+    "settings_source_path": "PIH/Setting.cs"
+  },
+  "lint_rules": {
+    "missing_review_docs_are_errors": false,
+    "require_readme_settings_table": false
+  },
+  "name": "gh-fix-pr-writeup",
+  "notes": [
+    "This file is a project-local skill profile for one consumer repository.",
+    "It is not a reusable foundry overlay and should stay outside the vendor subtree.",
+    "Keep this profile data-only: add repo-specific bindings, review docs, booleans, and notes here.",
+    "Review retained defaults before trusting this profile; unchanged values may still be reusable placeholders.",
+    "Keep template order, PR guidance locations, and repo-specific rule files in project-local profile data.",
+    "Do not place title/body drafting policy, QA gates, or validator/apply rules in the profile."
+  ],
+  "packet_defaults": {
+    "review_docs": {
+      "process": [
+        ".github/pull_request_template.md",
+        ".github/instructions/pull-request.instructions.md",
+        "CONTRIBUTING.md",
+        "MAINTAINING.md"
+      ],
+      "rules": [
+        ".github/pull_request_template.md",
+        ".github/instructions/pull-request.instructions.md",
+        ".github/instructions/commit-message.instructions.md",
+        "CONTRIBUTING.md"
+      ],
+      "runtime": [
+        "README.md",
+        "docs/architecture/runtime-layout.md",
+        "docs/architecture/effective-income-model.md"
+      ],
+      "testing": [
+        "README.md",
+        "PIH.Tests/EffectiveIncomeCalculatorTests.cs",
+        "PIH.Tests/ProxySignalEstimatorTests.cs"
+      ]
+    },
+    "source_path_globs": {
+      "process": [
+        ".github/**/*.md",
+        ".github/workflows/*.yml",
+        "README.md",
+        "CONTRIBUTING.md",
+        "MAINTAINING.md",
+        "docs/**"
+      ],
+      "rules": [
+        ".github/pull_request_template.md",
+        ".github/instructions/*.md",
+        "CONTRIBUTING.md"
+      ],
+      "runtime": [
+        "PIH/**/*.cs",
+        "PIH/Properties/PublishConfiguration.xml"
+      ],
+      "testing": [
+        "PIH.Tests/**/*.cs"
+      ]
+    }
+  },
+  "profile_path": ".codex/project/profiles/gh-fix-pr-writeup/profile.json",
+  "repo_match": {
+    "remote_patterns": [],
+    "root_markers": [
+      ".git",
+      "README.md"
+    ]
+  },
+  "summary": "Project-local gh-fix-pr-writeup profile scaffold for this consumer repository. Replace retained defaults with repo-specific bindings, review docs, and local notes.",
+  "metadata": {
+    "versioning": {
+      "builder_family": "packet-workflow",
+      "builder_semver": "0.1.0",
+      "compatibility_epoch": 1,
+      "repo_profile_schema_version": 1
+    }
+  },
+  "kind": "project-local-profile"
+}
